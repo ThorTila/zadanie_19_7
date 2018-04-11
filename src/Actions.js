@@ -26,7 +26,7 @@ export function thumbUpComment(id) {
         thumb: 'up'
     }
 }
-export function thumbDown(id) {
+export function thumbDownComment(id) {
     return {
         type: THUMB_DOWN_COMMENT,
         id: id,
