@@ -1,5 +1,6 @@
 import {
-    ADD_COMMENT
+    ADD_COMMENT,
+    THUMB_UP_COMMENT
 } from './Actions';
 
 export default function comments(state = [], action) {
@@ -11,6 +12,13 @@ export default function comments(state = [], action) {
                 votes: 0
                 }
         , ...state];
+        case THUMB_UP_COMMENT:
+            return state.map(comment => {
+                if(comment.id === action.id) {
+                return {...comment, votes: comment.votes + 1}
+                }
+            return comment;
+            });
         default:
             return state;
     }

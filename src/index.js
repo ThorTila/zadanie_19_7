@@ -6,9 +6,6 @@ import { createStore } from 'redux';
 import reducer from './reducer';
 import {addComment} from './Actions';
 
-
-/* import { combineReducers } from 'redux'; */
-
 const store = createStore(reducer);
 
 ReactDOM.render(

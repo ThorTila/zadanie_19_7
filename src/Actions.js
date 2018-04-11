@@ -19,7 +19,7 @@ export function editComment(id, text) {
         id: id
     }
 }
-export function thumbUp(id) {
+export function thumbUpComment(id) {
     return {
         type: THUMB_UP_COMMENT,
         id: id,
