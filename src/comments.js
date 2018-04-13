@@ -2,7 +2,8 @@ import {
     ADD_COMMENT,
     THUMB_UP_COMMENT,
     THUMB_DOWN_COMMENT,
-    REMOVE_COMMENT
+    REMOVE_COMMENT,
+    EDIT_COMMENT
 } from './Actions';
 
 export default function comments(state = [], action) {
@@ -31,6 +32,13 @@ export default function comments(state = [], action) {
         case REMOVE_COMMENT:
             return state.filter(comment => {
                 return comment.id !== action.id
+            });
+        case EDIT_COMMENT:
+            return state.map(comment => {
+                if (comment.id === action.id) {
+                    return {...comment, text: action.text}
+                }
+            return comment;
             });
         default:
             return state;
